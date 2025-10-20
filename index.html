@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc mừng 20/10 - Cdang Mánh</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at top, #ffe6f0, #ffccd5);
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 2.8em;
+      color: #d6336c;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.3em;
+      color: #333;
+      margin: 20px auto;
+      width: 80%;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .heart {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(to bottom right, #ff4d6d, #c9184a);
+      position: relative;
+      margin: 30px auto;
+      transform: rotate(-45deg);
+      animation: pulse 1.5s infinite;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 77, 109, 0.6);
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(to bottom right, #ff4d6d, #c9184a);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -60px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 60px;
+      top: 0;
+    }
+
+    .flowers {
+      width: 160px;
+      margin: 20px auto;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.1) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .petal {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -20px;
+        left: calc(50% - 10px);
+        transform: rotate(0deg);
+      }
+      100% {
+        top: 100vh;
+        left: calc(50% + 100px);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Chúc mừng 20/10 Cdang Mánh 💐</h1>
+  <div class="heart"></div>
+  <img class="flowers" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Rose_bouquet.jpg/320px-Rose_bouquet.jpg" alt="Hoa hồng">
+  <p>Chúc em 20/10 thật vui vẻ và hạnh phúc nhé!<br>
+  Vì em quá xinh đẹp nên hãy cứ vui vẻ và tỏa sáng em nhé,<br>
+  yêu công chúa của anh!</p>
+
+  <!-- Hiệu ứng hoa rơi -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let petal = document.createElement("div");
+      petal.className = "petal";
+      petal.style.left = Math.random() * window.innerWidth + "px";
+      petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+      petal.style.background = `rgba(255, ${100 + Math.random()*100}, ${150 + Math.random()*100}, 0.7)`;
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
